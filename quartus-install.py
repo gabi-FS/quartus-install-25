@@ -705,6 +705,9 @@ if not args.download_only:
         if patch.split("_",1)[0] == "update":
             print("Installing update %s\n" % (patch))
             install_patch(version, target, patch)
+        if patch == "modelsim":
+            print("Installing ModelSim\n")
+            install_patch(version, target, patch)
 
 if args.prune and not args.install_only:
     for url in urls:
