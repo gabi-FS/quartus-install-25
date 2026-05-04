@@ -160,6 +160,13 @@ for part in ["a5", "a10_part1", "a10_part2", "a10_part3", "a5gz"] :
 quartus_url_2011std['setup'] = "https://download.altera.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/QuartusSetup-20.1.1.720-linux.run"
 
 
+# Newer versions of Quartus Lite
+quartus_url_251lite = {}
+quartus_url_251lite["setup"] = "https://downloads.intel.com/akdlm/software/acdsinst/25.1std/1129/ib_installers/QuartusLiteSetup-25.1std.0.1129-linux.run"
+quartus_url_251lite["modelsim"] = "https://downloads.intel.com/akdlm/software/acdsinst/25.1std/1129/ib_installers/QuestaSetup-25.1std.0.1129-linux.run"
+
+quartus_url_251lite["c5"] = "https://downloads.intel.com/akdlm/software/acdsinst/25.1std/1129/ib_installers/cyclonev-25.1std.0.1129.qdz"
+
 # Lite have a different installer but the same device files
 quartus_url_2011lite = dict(quartus_url_2011std)
 quartus_url_2011lite['setup'] = "https://download.altera.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/QuartusLiteSetup-20.1.1.720-linux.run"
@@ -320,7 +327,7 @@ quartus_url_161std = {
     'm10' : "https://download.altera.com/akdlm/software/acdsinst/16.1/196/ib_installers/max10-16.1.0.196.qdz",
     's4' : "https://download.altera.com/akdlm/software/acdsinst/16.1/196/ib_installers/stratixiv-16.1.0.196.qdz",
     's5' : "https://download.altera.com/akdlm/software/acdsinst/16.1/196/ib_installers/stratixv-16.1.0.196.qdz"
-    
+
 }
 
 quartus_url_161lite = dict(quartus_url_161std)
@@ -431,7 +438,7 @@ quartus_versions = {
     '18.1std' : quartus_url_181std,
     '18.1lite' : quartus_url_181lite,
     '19.1std' : quartus_url_191std,
-    '19.1lite' : quartus_url_191lite,	
+    '19.1lite' : quartus_url_191lite,
     '19.1pro' : quartus_url_191pro,
     '19.2pro' : quartus_url_192pro,
     '19.3pro' : quartus_url_193pro,
@@ -524,7 +531,7 @@ def install_quartus(version, installdir):
     setup = quartus_versions[version]['setup']
     rc = run_installer(setup, installdir)
     return rc
-    
+
 def run_installer(installerfile, installdir):
     leafname = os.path.basename(installerfile)
     target = os.path.abspath(installdir)
@@ -536,14 +543,14 @@ def run_installer(installerfile, installdir):
     rc = process.wait()
     return rc
 #            ./$QUARTUS_SCRIPT --mode unattended --unattendedmodeui minimal --installdir $QUARTUS_DIR && \
-    
+
 def install_patch(version, installdir, patchname):
     patchfile = quartus_versions[version][patchname]
     rc = run_installer(patchfile, installdir)
     return rc
 
 def cmd_exists(cmd):
-    return subprocess.call("type " + cmd, shell=True, 
+    return subprocess.call("type " + cmd, shell=True,
         stdout=subprocess.PIPE, stderr=subprocess.PIPE) == 0
 
 
