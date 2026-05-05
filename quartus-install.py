@@ -447,6 +447,7 @@ quartus_versions = {
     '20.1.1std' : quartus_url_2011std,
     '20.1lite' : quartus_url_201lite,
     '20.1.1lite' : quartus_url_2011lite,
+    '25.1lite': quartus_url_251lite,
     '20.1pro' : quartus_url_201pro,
     '20.2pro' : quartus_url_202pro,
     '20.3pro' : quartus_url_203pro,
