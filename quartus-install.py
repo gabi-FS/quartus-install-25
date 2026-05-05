@@ -535,7 +535,7 @@ def install_quartus(version, installdir):
 def run_installer(installerfile, installdir):
     leafname = os.path.basename(installerfile)
     target = os.path.abspath(installdir)
-    args = ['--mode', 'unattended', '--unattendedmodeui', 'minimal']
+    args = ["--mode", "unattended"]
     numeric_version = ''.join(i for i in version if i.isdigit() or i=='.')
     if numeric_version >= '17.1':
         args = args + ['--accept_eula', '1']
