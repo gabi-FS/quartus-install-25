@@ -166,6 +166,8 @@ quartus_url_251lite["setup"] = "https://downloads.intel.com/akdlm/software/acdsi
 quartus_url_251lite["modelsim"] = "https://downloads.intel.com/akdlm/software/acdsinst/25.1std/1129/ib_installers/QuestaSetup-25.1std.0.1129-linux.run"
 
 quartus_url_251lite["c5"] = "https://downloads.intel.com/akdlm/software/acdsinst/25.1std/1129/ib_installers/cyclonev-25.1std.0.1129.qdz"
+quartus_url_251lite["c4"] = "https://downloads.intel.com/akdlm/software/acdsinst/25.1std/1129/ib_installers/cyclone-25.1std.0.1129.qdz"
+quartus_url_251lite["c10lp"] = "https://downloads.intel.com/akdlm/software/acdsinst/25.1std/1129/ib_installers/cyclone10lp-25.1std.0.1129.qdz"
 
 # Lite have a different installer but the same device files
 quartus_url_2011lite = dict(quartus_url_2011std)
